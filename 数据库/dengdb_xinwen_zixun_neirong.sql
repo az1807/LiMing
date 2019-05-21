@@ -16,29 +16,32 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `xin wen_zixun neirong`
+-- Table structure for table `xinwen_zixun_neirong`
 --
 
-DROP TABLE IF EXISTS `xin wen_zixun neirong`;
+DROP TABLE IF EXISTS `xinwen_zixun_neirong`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `xin wen_zixun neirong` (
+CREATE TABLE `xinwen_zixun_neirong` (
   `xinwen_id` int(11) NOT NULL AUTO_INCREMENT,
   `xinwen_neirong` varchar(45) DEFAULT NULL,
   `xinwen_mingcheng` varchar(45) DEFAULT NULL,
   `xinwen_time` varchar(45) DEFAULT NULL,
-  `xinwen zixun_id` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`xinwen_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `xinwen_zixun_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`xinwen_id`),
+  KEY `zz_idx` (`xinwen_zixun_id`),
+  CONSTRAINT `zz` FOREIGN KEY (`xinwen_zixun_id`) REFERENCES `xinwen_zixun` (`xinwen_zixun_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `xin wen_zixun neirong`
+-- Dumping data for table `xinwen_zixun_neirong`
 --
 
-LOCK TABLES `xin wen_zixun neirong` WRITE;
-/*!40000 ALTER TABLE `xin wen_zixun neirong` DISABLE KEYS */;
-/*!40000 ALTER TABLE `xin wen_zixun neirong` ENABLE KEYS */;
+LOCK TABLES `xinwen_zixun_neirong` WRITE;
+/*!40000 ALTER TABLE `xinwen_zixun_neirong` DISABLE KEYS */;
+INSERT INTO `xinwen_zixun_neirong` VALUES (1,'<p>1、按家具从风格上可以分为：','灯有哪些类型','2008-01-20',2),(2,'阿卡范德萨发生地方建设的开发','灯的用途','2029-05-20',2),(3,'时空技能及发送的给你','灯','2019-05-20',2);
+/*!40000 ALTER TABLE `xinwen_zixun_neirong` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-20 23:47:36
+-- Dump completed on 2019-05-22  0:08:42
